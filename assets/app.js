@@ -40,7 +40,7 @@ newButtons()
             p.addClass("rating")
             console.log(results[i].images.fixed_height_still.url);
             var chosenImage = $("<img>");
-            chosenImage.attr("src", results[i].images.fixed_height.url);
+            chosenImage.attr("src", results[i].images.fixed_height_still.url);
             chosenImage.attr("data-still", results[i].images.fixed_height_still.url)
             chosenImage.attr("data-animate", results[i].images.fixed_height.url)
             chosenImage.attr("data-state", "still")
@@ -57,7 +57,7 @@ newButtons()
 //all in a div
 //If array reaches certain count, new div
     $(document).on("click",".gif", function() {
- 				console.log("hi");
+ 			
         var state = $(this).attr("data-state");
         // console.log(state);
 
