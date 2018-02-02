@@ -1,11 +1,13 @@
 body {
+	font-family: 'Kanit', sans-serif;
 	background-color: rgb(20,20,20)
 
 }
 
 h1 {
 	text-align: center;
-	color: rgb(227,18,34)
+	color: rgb(227,18,34);
+	font-size: 45px;
 }
 
 p {
@@ -17,9 +19,8 @@ label {
 }
 
 #gif-form {
-	position: absolute;
-	right: 20px;
-	top: 20px;
+	position: relative;
+	float: right;
 }
 .button-style {
 	margin-left: 5px;
