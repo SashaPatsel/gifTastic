@@ -34,7 +34,10 @@ newButtons()
 
             var rating = results[i].rating;
 
+            var masterDiv = $("<div class='img-container'>")
+
             var p = $("<p>").text("Rating: " + rating);
+            p.addClass("rating")
             console.log(results[i].images.fixed_height_still.url);
             var chosenImage = $("<img>");
             chosenImage.attr("src", results[i].images.fixed_height.url);
@@ -42,15 +45,17 @@ newButtons()
             chosenImage.attr("data-animate", results[i].images.fixed_height.url)
             chosenImage.attr("data-state", "still")
             chosenImage.addClass("gif")
-            gifDiv.prepend(p);
+            // gifDiv.html(p);
             gifDiv.prepend(chosenImage);
-
-            $(".more-gifs").prepend(gifDiv);
+            masterDiv.prepend(gifDiv)
+            masterDiv.append(p)
+            $(".more-gifs").prepend(masterDiv);
 
           }
         });
       }
-
+//all in a div
+//If array reaches certain count, new div
     $(document).on("click",".gif", function() {
  				console.log("hi");
         var state = $(this).attr("data-state");

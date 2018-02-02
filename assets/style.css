@@ -1,15 +1,53 @@
+body {
+	background-color: rgb(20,20,20)
+
+}
+
+h1 {
+	text-align: center;
+	color: rgb(227,18,34)
+}
+
+p {
+	color: rgb(227,18,34);
+}
+
+label {
+	color: rgb(227,18,34);
+}
+
 #gif-form {
 	position: absolute;
 	right: 20px;
-	top: 50px;
+	top: 20px;
 }
 .button-style {
 	margin-left: 5px;
 	margin-bottom: 5px;
+	background-color: rgb(33,84,102);
+	color: white;
 }
 
-.gif {
+.rating {
+	text-align: center;
+}
+
+.img-container {
 	float: left;
 	margin-left: 5px;
 	margin-bottom: 5px;
+	border: solid 2px rgb(180,180,180);
+	padding: 5px;
 }
+
+#add-gifs {
+	color: black;
+	position: relative;
+	left: 40px;
+}
+
+.title {
+	margin-bottom: 20px;
+}
+
+
