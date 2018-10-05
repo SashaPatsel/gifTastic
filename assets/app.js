@@ -45,7 +45,6 @@ newButtons()
             chosenImage.attr("data-animate", results[i].images.fixed_height.url)
             chosenImage.attr("data-state", "still")
             chosenImage.addClass("gif")
-            // gifDiv.html(p);
             gifDiv.prepend(chosenImage);
             masterDiv.prepend(gifDiv)
             masterDiv.append(p)

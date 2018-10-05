@@ -7,9 +7,9 @@ You are given some of my favorite TV Shows to start with, but you can add your o
 This app uses the gify API to call for 10 gifs from any given show (all though the search bar can return gifs of any sort, not just TV shows).
 
 
-Click [here](https://sashapatsel.github.io/super-smash-rpg/) to play.
+Click [here](https://sashapatsel.github.io/pretty-much-netflix/) to try.
 
-<img src="assets/images/demo.png">
+<img src="assets/demo.png">
 
 
 
@@ -23,36 +23,42 @@ Feel free to clone this repository! No other installation necessary.
 * HTML 
 * CSS
 * JQuery
+* AJAX
 
 
 ## Code Snippets
-Here are some of the variables at play in this game
+This is the AJAX call that gives you all the amazing gifs!
 ```javascript
-	var playerStats;
-	var opponentStats;
-	var isCharacterChosen;
-	var hasNotPicked;
-	var isEnemyChosen;
-	var mario;
-	var kirby;
-	var dk;
-	var pikachu;
-	var enemyDown;
+	      $.ajax({
+          url: queryURL,
+          method: "GET"
+        })
+        .then(function(response) {
+          var results = response.data;
 
+          for (var i = 0; i < results.length; i++) {
+            var gifDiv = $("<div class='item'>");
 
-	function gameStart() {
+            var rating = results[i].rating;
 
-			playerStats ={};
-			opponentStats = {};
+            var masterDiv = $("<div class='img-container col-md-4'>")
 
-			isCharacterChosen = false;
-			isEnemyChosen = false;
-			isFighting = false;
-			gameDone = false;
+            var p = $("<p>").text("Rating: " + rating);
+            p.addClass("rating")
 
-			enemyDown = 0;
-	
-	};
+            var chosenImage = $("<img class='img'>");
+            chosenImage.attr("src", results[i].images.fixed_height_still.url);
+            chosenImage.attr("data-still", results[i].images.fixed_height_still.url)
+            chosenImage.attr("data-animate", results[i].images.fixed_height.url)
+            chosenImage.attr("data-state", "still")
+            chosenImage.addClass("gif")
+            gifDiv.prepend(chosenImage);
+            masterDiv.prepend(gifDiv)
+            masterDiv.append(p)
+            $(".more-gifs").prepend(masterDiv);
+
+          }
+        });
 
 ```
 
@@ -66,4 +72,4 @@ Here are some of the variables at play in this game
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Notes
-- This is my first project using JQuery. I found it to be a very refreshing change from vanilla javascript. JQuery makes it a lot more straightforward to identify elements on the DOM and to manipulate them
+
