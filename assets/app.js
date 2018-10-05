@@ -34,12 +34,12 @@ newButtons()
 
             var rating = results[i].rating;
 
-            var masterDiv = $("<div class='img-container'>")
+            var masterDiv = $("<div class='img-container col-md-4'>")
 
             var p = $("<p>").text("Rating: " + rating);
             p.addClass("rating")
-            console.log(results[i].images.fixed_height_still.url);
-            var chosenImage = $("<img>");
+
+            var chosenImage = $("<img class='img'>");
             chosenImage.attr("src", results[i].images.fixed_height_still.url);
             chosenImage.attr("data-still", results[i].images.fixed_height_still.url)
             chosenImage.attr("data-animate", results[i].images.fixed_height.url)
